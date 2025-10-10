@@ -1,0 +1,82 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+    "name": "vscode_linux",
+    // "build": {
+    //     // Sets the run context to one level up instead of the .devcontainer folder.
+    //     "context": "../..",
+    //     // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+    //     "dockerfile": "Dockerfile"
+    // },
+    // "initializeCommand": "xhost +local:",
+    // "runArgs": [
+    //     "--gpus=all"
+    // ],
+    // "appPort": [],
+    "dockerComposeFile": "docker-compose.yaml",
+    "service": "devcontainer",
+    "containerEnv": {
+        "DISPLAY": "${localEnv:DISPLAY}",
+        "XAUTHORITY": "${localEnv:XAUTHORITY}",
+        "XDG_RUNTIME_DIR": "${localEnv:XDG_RUNTIME_DIR}"
+    },
+    "forwardPorts": [],
+    "privileged": true,
+    "features": {
+        "ghcr.io/devcontainers/features/hugo:1": {}
+    },
+    "workspaceFolder": "/workspace",
+    "mounts": [
+        {
+            "source": "/tmp/.X11-unix",
+            "target": "/tmp/.X11-unix",
+            "type": "bind"
+        },
+        // {
+        //     "source": "${localEnv:XAUTHORITY}",
+        //     "target": "${localEnv:XAUTHORITY}",
+        //     "type": "bind"
+        // },
+        {
+            "source": "/dev",
+            "target": "/dev",
+            "type": "bind"
+        }
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "lldb.executable": "/usr/bin/lldb",
+                "files.watcherExclude": {
+                    "**/target/**": true
+                },
+                "rust-analyzer.checkOnSave": true,
+                "rust-analyzer.check.command": "clippy",
+                "[rust]": {
+                    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+                    "editor.formatOnSave": true
+                }
+            },
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "ms-vscode.cpptools-extension-pack",
+                "mutantdino.resourcemonitor",
+                "rust-lang.rust-analyzer",
+                "fill-labs.dependi",
+                "tamasfe.even-better-toml",
+                "vadimcn.vscode-lldb",
+                "ms-python.python"
+            ]
+        }
+    }
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    // "features": {},
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+    // Uncomment the next line to run commands after the container is created.
+    // "postCreateCommand": "cat /etc/os-release",
+    // Configure tool-specific properties.
+    // "customizations": {},
+    // Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "devcontainer"
+}
