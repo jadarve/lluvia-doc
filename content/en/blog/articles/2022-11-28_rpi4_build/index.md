@@ -57,7 +57,7 @@ Flow2RGBA -down-> RGBA2BGRA: out_rgba
 @enduml
 ```
 
-with the [**`HornSchunck`**]({{< ref "docs/nodes/lluvia/opticalflow/HornSchunck/HornSchunck" >}}) node containing the algorithm implementation as discussed in a [previous article]({{< ref "blog/articles/2022-08-07_horn_schunck" >}}). 
+with the [**`HornSchunck`**](TODO) node containing the algorithm implementation as discussed in a [previous article]({{< ref "blog/articles/2022-08-07_horn_schunck" >}}). 
 
 {{< alert title="OpenCV BGR color ordering" color="warning" >}}
 By default, OpenCV used **BGRA** channel ordering for color images. On the other hand, Lluvia uses **RGBA** ordering to store color images. The last node in the demo pipeline converts to the color order OpenCV expects to render into the screen. 

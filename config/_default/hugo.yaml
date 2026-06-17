@@ -76,14 +76,7 @@ menu:
     - name: GitHub
       weight: 1
       url: "https://github.com/jadarve/lluvia"
-    - name: "C++ API"
-      identifier: api_cpp
-      url: "api/cpp/index.html"
-      weight: 4
-    - name: Python API
-      identifier: api_py
-      url: "api/python/index.html"
-      weight: 5
+
 
 params:
   taxonomy:
