@@ -49,3 +49,11 @@ RUN pip3 install --no-cache-dir --break-system-packages \
 RUN wget https://github.com/bazelbuild/bazelisk/releases/download/v1.27.0/bazelisk-amd64.deb \
     && sudo dpkg -i bazelisk-amd64.deb \
     && rm bazelisk-amd64.deb
+
+# Bazel buildifier and buildozer
+RUN wget https://github.com/bazelbuild/buildtools/releases/download/v8.2.1/buildifier-linux-amd64 \
+    && wget https://github.com/bazelbuild/buildtools/releases/download/v8.2.1/buildozer-linux-amd64 \
+    && chmod +x buildifier-linux-amd64 \
+    && chmod +x buildozer-linux-amd64 \
+    && sudo mv buildifier-linux-amd64 /usr/local/bin/buildifier \
+    && sudo mv buildozer-linux-amd64 /usr/local/bin/buildozer

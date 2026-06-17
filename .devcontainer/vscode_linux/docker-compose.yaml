@@ -1,12 +1,12 @@
 services:
   devcontainer:
     stdin_open: true # docker run -i
-    tty: true        # docker run -t
+    tty: true # docker run -t
     build:
       context: .
       dockerfile: ./Dockerfile
     volumes:
-      - ../../:/workspace
+      - ../:/workspace
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /dev:/dev
     environment:
@@ -18,6 +18,6 @@ services:
           devices:
             - driver: nvidia
               count: all
-              capabilities: [gpu]
+              capabilities: [ gpu ]
     privileged: true
     network_mode: host
