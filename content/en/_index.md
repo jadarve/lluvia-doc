@@ -1,77 +1,37 @@
 ---
-title: Goldydocs
+title: Lluvia
+linkTitle: Lluvia
+description: Lluvia landing page
+date: 2020-05-23T15:17:00-05:00
+draft: false
 ---
 
-{{< blocks/cover title="Welcome to Goldydocs: A Docsy Example Project!" image_anchor="top" height="full" >}}
-<a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/">
-  Learn More <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+{{< blocks/cover title="Welcome to Lluvia!" image_anchor="top" height="full" color="primary" >}}
+<div class="mx-auto">
+<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs/about" >}}">
+Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
 </a>
-<a class="btn btn-lg btn-secondary me-3 mb-4" href="https://github.com/google/docsy-example">
-  Download <i class="fab fa-github ms-2 "></i>
+<a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/jadarve/lluvia">
+Download <i class="fab fa-github ml-2 "></i>
 </a>
-<p class="lead mt-5">Porridge temperature assessment &mdash; in the cloud!</p>
-{{< blocks/link-down color="info" >}}
+<p class="lead mt-5">A real-time compute engine for computer vision</p>
+{{< blocks/link-down color="info" id="overview" >}}
+</div>
 {{< /blocks/cover >}}
 
-
 {{% blocks/lead color="primary" %}}
-Goldydocs provides a single web UI providing visibility into porridge
-temperature, chair size, and bed softness metrics! You can even find out who's
-been eating **your** porridge.
-
-(Sadly, Goldydocs isn't a real project, but you can use this site as an example
-to create your own real websites with [Docsy](https://docsy.dev))
+Lluvia is a computer vision engine designed for real-time applications. Users can describe algorithms as a compute graph which is dispatched for execution on the GPU. Lluvia uses the Vulkan API, allowing it to run the same algorithm on different GPU platforms.
 {{% /blocks/lead %}}
 
+{{< blocks/section color="dark" type="features">}}
 
-{{% blocks/section color="dark" type="row" %}}
-{{% blocks/feature icon="fa-lightbulb" title="New chair metrics!" %}}
-The Goldydocs UI now shows chair size metrics by default.
-
-Please follow this space for updates!
+{{% blocks/feature icon="fa-lightbulb" title="Get Started!" url="/docs/gettingstarted/" %}}
+See how you can use Lluvia for quick development of performant algorithms.
 {{% /blocks/feature %}}
 
 
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/google/docsy-example" %}}
-We do a [Pull Request](https://github.com/google/docsy-example/pulls) contributions workflow on **GitHub**. New users are always welcome!
+{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/jadarve/lluvia" %}}
+We do a [Pull Request](https://github.com/jadarve/lluvia/pulls) contributions workflow on **GitHub**. New users are always welcome!
 {{% /blocks/feature %}}
 
-
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/docsydocs" %}}
-For announcement of latest features etc.
-{{% /blocks/feature %}}
-
-
-{{% /blocks/section %}}
-
-
-{{% blocks/section %}}
-This is the second section
-{.h1 .text-center}
-{{% /blocks/section %}}
-
-
-{{% blocks/section type="row" %}}
-
-{{% blocks/feature icon="fab fa-app-store-ios" title="Download **from AppStore**" %}}
-Get the Goldydocs app!
-{{% /blocks/feature %}}
-
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!"
-    url="https://github.com/google/docsy-example" %}}
-We do a [Pull Request](https://github.com/google/docsy-example/pulls)
-contributions workflow on **GitHub**. New users are always welcome!
-{{% /blocks/feature %}}
-
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!"
-    url="https://twitter.com/GoHugoIO" %}}
-For announcement of latest features etc.
-{{% /blocks/feature %}}
-
-{{% /blocks/section %}}
-
-
-{{% blocks/section %}}
-This is the another section
-{.h1 .text-center}
-{{% /blocks/section %}}
+{{< /blocks/section >}}
