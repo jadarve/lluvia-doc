@@ -32,7 +32,7 @@ where $z_\text{min}$ and $z_\text{max}$ are known values.
 The color field $C : \mathbb{Z}^{2}_{\ge 0} \rightarrow \text{RGB}$ is the result of applying the color mapping function of all values of field $F$ as:
 
 $$
-C(x, y) := c\left\( \frac{F(x, y)}{z_\text{max} - z_\text{min}} \right\)
+C(x, y) := c\left( \frac{F(x, y)}{z_\text{max} - z_\text{min}} \right)
 $$
 
 ### Gray color mapping

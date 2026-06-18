@@ -57,6 +57,20 @@ markup:
         block: true
     renderer:
       unsafe: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - - '\['
+              - '\]'
+            - - '$$'
+              - '$$'
+          inline:
+            - - '\('
+              - '\)'
+            - - '$'
+              - '$'
   highlight:
     # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
     style: github
@@ -136,6 +150,41 @@ params:
 
   copyright:
     authors: The Lluvia Authors
+
+  # KaTeX configuration for math rendering
+  katex:
+    enable: true
+    html_dom_element: "document.body"
+    options:
+      throwOnError: false
+      errorColor: "#CD5C5C"
+      delimiters:
+        - left: '$$'
+          right: '$$'
+          display: true
+        - left: '$'
+          right: '$'
+          display: false
+        - left: '\('
+          right: '\)'
+          display: false
+        - left: '\['
+          right: '\]'
+          display: true
+
+  # Mermaid configuration for diagrams
+  mermaid:
+    enable: true
+    theme: neutral
+    flowchart:
+      diagramPadding: 6
+
+  # PlantUML configuration for UML diagrams
+  plantuml:
+    enable: true
+    theme: default
+    svg_image_url: "https://www.plantuml.com/plantuml/svg/"
+    svg: true
 
   # User interface configuration
   ui:
