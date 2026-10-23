@@ -90,6 +90,9 @@ menu:
     - name: GitHub
       weight: 1
       url: "https://github.com/jadarve/lluvia"
+    - name: Media Analyzer
+      weight: 4
+      url: "/media-analyzer/"
 
 
 params:
