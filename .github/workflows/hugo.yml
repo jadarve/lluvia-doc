@@ -61,6 +61,30 @@ jobs:
       - name: Include CNAME
         run: |
           cp CNAME public
+      - name: Checkout media_analyzer
+        uses: actions/checkout@v4
+        with:
+          repository: jadarve/media_analyzer
+          path: projects/media_analyzer
+      - name: Setup Rust toolchain for wasm
+        working-directory: projects/media_analyzer
+        run: |
+          rustup set profile minimal
+          rustup target add wasm32-unknown-unknown
+      - name: Rust Cache
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: projects/media_analyzer
+      - name: Download and install Trunk binary
+        working-directory: projects/media_analyzer
+        run: |
+          wget -qO- https://github.com/thedodd/trunk/releases/latest/download/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
+      - name: Build media_analyzer
+        working-directory: projects/media_analyzer
+        run: |
+          ./trunk build --release \
+            --public-url /media-analyzer/ \
+            --dist "${{ github.workspace }}/public/media-analyzer"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
